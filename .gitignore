@@ -2,3 +2,4 @@ node_modules
 .env
 prisma/migrations
 public/images
+fronted/node_modules
