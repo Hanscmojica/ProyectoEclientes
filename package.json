@@ -1,0 +1,39 @@
+{
+  "name": "backend-base",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js",
+    "build:frontend": "cd frontend && npm install && npm run build",
+    "install:all": "npm install && cd frontend && npm install",
+    "dev:all": "npm run build:frontend && npm run dev",
+    "setup:frontend": "mkdir -p scripts && node scripts/setup-frontend.js",
+    "start:with-frontend": "npm run setup:frontend && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@prisma/client": "^5.13.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "express-validator": "^6.5.0",
+    "install": "^0.13.0",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.26.0",
+    "mongoose": "^5.9.18",
+    "multer": "^1.4.5-lts.1",
+    "nodemon": "^3.1.9",
+    "npm": "^10.8.1",
+    "prisma": "^6.5.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.5.0",
+    "axios": "^1.8.4",
+    "express": "^4.21.2"
+  }
+}
