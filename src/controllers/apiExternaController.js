@@ -1,4 +1,6 @@
 const axios = require('axios');
+const { registrarConsulta } = require('../services/registroConsultaService');
+const jwt = require('jsonwebtoken');
 
 // Base URL para la API de SAGA
 const SAGA_API_URL = 'https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef';
@@ -21,6 +23,9 @@ const obtenerReferencias = async (req, res) => {
       });
     }
     
+    // Obtener el ID del usuario a partir del token
+    const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+    
     // Llamar a la API de SAGA 
     const respuesta = await axios.get(`${SAGA_API_URL}/`, {
       headers: {
@@ -30,10 +35,46 @@ const obtenerReferencias = async (req, res) => {
     
     console.log('Respuesta de SAGA recibida');
     
+    // Registrar la consulta exitosa
+    registrarConsulta(
+      uid,
+      'TODAS', // Folio especial para listar todas las referencias
+      'LISTAR',
+      true,
+      null,
+      'Consulta de todas las referencias',
+      req.ip
+    );
+    
     // Devolver las referencias 
     res.status(200).json(respuesta.data);
   } catch (error) {
     console.error('Error al obtener referencias de SAGA:', error);
+    
+    // Intentar obtener el ID del usuario para registrar el error
+    let userId = null;
+    try {
+      const token = req.header('x-token');
+      if (token) {
+        const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+        userId = uid;
+      }
+    } catch (err) {
+      console.error('Error al decodificar token:', err);
+    }
+    
+    // Registrar la consulta fallida si se pudo obtener el ID
+    if (userId) {
+      registrarConsulta(
+        userId,
+        'TODAS',
+        'LISTAR',
+        false,
+        error.response ? error.response.data.message : error.message,
+        'Error al obtener referencias',
+        req.ip
+      );
+    }
     
     // Devolver mensaje de error específico si está disponible
     if (error.response) {
@@ -71,6 +112,9 @@ const obtenerDetalleReferencia = async (req, res) => {
       });
     }
     
+    // Obtener el ID del usuario a partir del token
+    const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+    
     // Llamar a la API de SAGA
     const respuesta = await axios.get(`${SAGA_API_URL}/${id}`, {
       headers: {
@@ -80,10 +124,48 @@ const obtenerDetalleReferencia = async (req, res) => {
     
     console.log('Detalle de referencia recibido');
     
+    // Registrar la consulta exitosa
+    registrarConsulta(
+      uid,
+      id,
+      'DETALLE',
+      true,
+      null,
+      `Consulta de detalle de referencia ${id}`,
+      req.ip
+    );
+    
     // Devolver el detalle de la referencia
     res.status(200).json(respuesta.data);
   } catch (error) {
     console.error('Error al obtener detalle de referencia de SAGA:', error);
+    
+    // Intentar obtener el ID del usuario para registrar el error
+    let userId = null;
+    let referenciaId = req.params.id || 'N/A';
+    
+    try {
+      const token = req.header('x-token');
+      if (token) {
+        const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+        userId = uid;
+      }
+    } catch (err) {
+      console.error('Error al decodificar token:', err);
+    }
+    
+    // Registrar la consulta fallida si se pudo obtener el ID
+    if (userId) {
+      registrarConsulta(
+        userId,
+        referenciaId,
+        'DETALLE',
+        false,
+        error.response ? error.response.data.message : error.message,
+        `Error al obtener detalle de referencia ${referenciaId}`,
+        req.ip
+      );
+    }
     
     // Devolver mensaje de error específico si está disponible
     if (error.response) {
@@ -127,6 +209,9 @@ const buscarReferencias = async (req, res) => {
       });
     }
     
+    // Obtener el ID del usuario a partir del token
+    const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+    
     // Llamar a la API de SAGA
     const respuesta = await axios.get(`${SAGA_API_URL}/buscar?termino=${termino}`, {
       headers: {
@@ -136,10 +221,48 @@ const buscarReferencias = async (req, res) => {
     
     console.log('Resultados de búsqueda recibidos');
     
+    // Registrar la consulta exitosa
+    registrarConsulta(
+      uid,
+      termino,
+      'BUSQUEDA',
+      true,
+      null,
+      `Búsqueda de referencias con término: ${termino}`,
+      req.ip
+    );
+    
     // Devolver los resultados de la búsqueda
     res.status(200).json(respuesta.data);
   } catch (error) {
     console.error('Error al buscar referencias en SAGA:', error);
+    
+    // Intentar obtener el ID del usuario para registrar el error
+    let userId = null;
+    let terminoBusqueda = req.query.termino || 'N/A';
+    
+    try {
+      const token = req.header('x-token');
+      if (token) {
+        const { uid } = jwt.verify(token, process.env.SECRET_JWT_SEED);
+        userId = uid;
+      }
+    } catch (err) {
+      console.error('Error al decodificar token:', err);
+    }
+    
+    // Registrar la consulta fallida si se pudo obtener el ID
+    if (userId) {
+      registrarConsulta(
+        userId,
+        terminoBusqueda,
+        'BUSQUEDA',
+        false,
+        error.response ? error.response.data.message : error.message,
+        `Error al buscar referencias con término: ${terminoBusqueda}`,
+        req.ip
+      );
+    }
     
     // Devolver mensaje de error específico si está disponible
     if (error.response) {
@@ -156,11 +279,13 @@ const buscarReferencias = async (req, res) => {
   }
 };
 
-// Agregar una función para probar la conexión con SAGA
+/**
+ * Probar la conexión con SAGA
+ * @param {Object} req - Solicitud HTTP
+ * @param {Object} res - Respuesta HTTP
+ */
 const probarConexion = async (req, res) => {
   try {
-    console.log('Probando conexión con SAGA...');
-    
     // Obtener el token del usuario desde la petición
     const token = req.header('x-token');
     
@@ -170,28 +295,25 @@ const probarConexion = async (req, res) => {
       });
     }
     
-    // Intenta hacer una petición simple a la API
-    const respuesta = await axios.get(`${SAGA_API_URL}/`, {
+    // Realizar una petición de prueba a la API de SAGA
+    await axios.get(`${SAGA_API_URL}/estado`, {
       headers: {
         'Authorization': `Bearer ${token}`
-      }
+      },
+      timeout: 5000 // 5 segundos de timeout
     });
     
-    console.log('Conexión exitosa con SAGA');
-    
-    // Devolver respuesta de éxito
+    // Si llegamos aquí, la conexión es exitosa
     res.status(200).json({
-      message: 'Conexión exitosa con SAGA',
-      status: 'OK'
+      estado: 'conectado',
+      mensaje: 'Conexión exitosa con SAGA'
     });
   } catch (error) {
-    console.error('Error al conectar con SAGA:', error);
+    console.error('Error al probar conexión con SAGA:', error);
     
-    // Devolver mensaje de error detallado
-    res.status(500).json({
-      message: 'Error al conectar con SAGA',
-      error: error.message,
-      details: error.response ? `Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}` : 'Sin detalles adicionales'
+    res.status(503).json({
+      estado: 'desconectado',
+      mensaje: 'No se pudo establecer conexión con SAGA'
     });
   }
 };

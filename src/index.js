@@ -13,7 +13,7 @@ const v1ImagesRouter = require("./v1/routes/imageRoutes");
 const v1PdfsRouter = require("./v1/routes/pdfRoutes");
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Habilitar CORS para todas las solicitudes
 app.use(cors());
