@@ -1,6 +1,7 @@
 // src/controllers/apiExternaController.js (actualizado completo)
 const apiExternaService = require('../services/apiExternaService');
 const { registrarErrorAPI } = require('../services/apiErrorService');
+const { da } = require('date-fns/locale');
 
 // Base URL para la API de SAGA
 const SAGA_API_URL = 'https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef';
@@ -96,36 +97,25 @@ const obtenerReferencias = async (req, res) => {
 const obtenerDetalleReferencia = async (req, res) => {
   try {
     // Obtener el ID de la referencia desde los parámetros
-    const { id } = req.params;
-    
-    console.log(`Obteniendo detalle de referencia: ${id}`);
+    const body = req.body;  // Crear un encabezado personalizado en la respuesta
     
     // Obtener el token del usuario desde la petición
-    const token = req.header('x-token');
+    // const token = req.header('x-token');
     
-    if (!token) {
-      return res.status(401).json({ 
-        message: 'No hay token en la petición'
-      });
-    }
+    // if (!token) {
+    //   return res.status(401).json({ 
+    //     message: 'No hay token en la petición'
+    //   });
+    // }
     
     // Llamar al servicio mejorado
-    const detalle = await apiExternaService.obtenerDetalleReferencia(id, token);
-    
-    console.log('Detalle de referencia recibido');
+    const data = await apiExternaService.referenciaPorCliente(body);
     
     // Devolver el detalle de la referencia
-    res.status(200).json(detalle);
+    res.status(200).json(data);
+
   } catch (error) {
     console.error('Error al obtener detalle de referencia de SAGA:', error);
-    
-    // Registrar el error en el log
-    registrarErrorAPI(
-      'apiExternaController.obtenerDetalleReferencia', 
-      `${SAGA_API_URL}/${req.params.id}`, 
-      error, 
-      req.usuario
-    );
     
     // Devolver mensaje de error específico si está disponible
     if (error.response) {

@@ -314,3 +314,75 @@
   }
 }
 
+{
+  "timestamp": "2025-05-03T21:41:38.697Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:74)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T21:45:05.635Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:70)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T21:45:06.732Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:70)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T21:45:32.485Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:70)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T21:45:50.980Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:70)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T21:46:10.055Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/1",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "token is not defined",
+    "stack": "ReferenceError: token is not defined\n    at obtenerDetalleReferencia (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:113:70)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:149:13)\n    at Route.dispatch (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\route.js:119:3)\n    at Layer.handle [as handle_request] (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\layer.js:95:5)\n    at C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:284:15\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:365:14)\n    at param (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:376:14)\n    at Function.process_params (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:421:3)\n    at next (C:\\Users\\Admin\\Desktop\\ProyectoEclientes\\node_modules\\express\\lib\\router\\index.js:280:10)",
+    "response": null
+  }
+}
+

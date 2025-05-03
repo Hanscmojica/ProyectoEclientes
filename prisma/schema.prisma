@@ -1,9 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
-// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
-
 generator client {
   provider = "prisma-client-js"
 }
@@ -14,81 +8,65 @@ datasource db {
 }
 
 model BP_01_USUARIO {
-  nId01Usuario Int       @id @default(autoincrement())
-  sNombre String
-  sApellidoPaterno String
-  sApellidoMaterno String
-  sUsuario String @unique
-  sEmail       String    @unique
-  sPassword    String
-  sUsuarioImg String?
-  bActivo Boolean @default(false)
-  dFechaCreacion     DateTime  @default(now())  // Sin el signo de ? para que no sea opcional
+  nId01Usuario        Int                    @id @default(autoincrement())
+  sNombre             String
+  sApellidoPaterno    String
+  sApellidoMaterno    String
+  sUsuario            String                 @unique
+  sEmail              String                 @unique
+  sPassword           String
+  bActivo             Boolean                @default(false)
+  dFechaCreacion      DateTime               @default(now())
   dFechaActualizacion DateTime?
-
+  sUsuarioImg         String?
   perfilesUsuario     BP_04_PERFIL_USUARIO[] @relation("UsuarioPerfiles")
-  registrosConsulta   BP_06_REGISTRO_CONSULTA[] @relation("UsuarioConsultas")
 }
 
-
 model BP_02_PERFIL {
-  nId02Perfil  Int       @id @default(autoincrement())
-  sNombre String @unique
-  sDescripcion String
-  dFechaCreacion     DateTime  @default(now())  // Sin el signo de ? para que no sea opcional
+  nId02Perfil         Int                    @id @default(autoincrement())
+  sNombre             String                 @unique
+  sDescripcion        String
+  dFechaCreacion      DateTime               @default(now())
   dFechaActualizacion DateTime?
-
   perfilesUsuario     BP_04_PERFIL_USUARIO[] @relation("PerfilUsuarios")
   perfilesPermiso     BP_05_PERFIL_PERMISO[] @relation("PerfilPermisos")
-
 }
 
 model BP_03_PERMISO {
-  nId03Permiso Int        @id @default(autoincrement())
-  sNombre String @unique
-  sDescripcion String
-  dFechaCreacion     DateTime  @default(now())  // Sin el signo de ? para que no sea opcional
+  nId03Permiso        Int                    @id @default(autoincrement())
+  sNombre             String                 @unique
+  sDescripcion        String
+  dFechaCreacion      DateTime               @default(now())
   dFechaActualizacion DateTime?
-
   perfilesPermiso     BP_05_PERFIL_PERMISO[] @relation("PermisoPerfiles")
-
 }
 
 model BP_04_PERFIL_USUARIO {
-  nId04PerfilUsuario Int        @id @default(autoincrement())
-  nId01Usuario Int
-  nId02Perfil Int
-  dFechaCreacion     DateTime  @default(now())  // Sin el signo de ? para que no sea opcional
+  nId04PerfilUsuario  Int           @id @default(autoincrement())
+  nId01Usuario        Int
+  nId02Perfil         Int
+  dFechaCreacion      DateTime      @default(now())
   dFechaActualizacion DateTime?
-  usuario             BP_01_USUARIO      @relation("UsuarioPerfiles", fields: [nId01Usuario], references: [nId01Usuario])
-  perfil              BP_02_PERFIL       @relation("PerfilUsuarios", fields: [nId02Perfil], references: [nId02Perfil])
+  usuario             BP_01_USUARIO @relation("UsuarioPerfiles", fields: [nId01Usuario], references: [nId01Usuario])
+  perfil              BP_02_PERFIL  @relation("PerfilUsuarios", fields: [nId02Perfil], references: [nId02Perfil])
+
+  @@index([nId01Usuario], map: "BP_04_PERFIL_USUARIO_nId01Usuario_fkey")
+  @@index([nId02Perfil], map: "BP_04_PERFIL_USUARIO_nId02Perfil_fkey")
 }
 
 model BP_05_PERFIL_PERMISO {
-  nId05PerfilPermiso Int        @id @default(autoincrement())
-  nId03Permiso Int
-  nId02Perfil Int
-  nLeer Boolean @default(false)
-  nCrear Boolean @default(false)
-  nEditar Boolean @default(false)
-  nBorrar Boolean @default(false)
-  dFechaCreacion     DateTime  @default(now())  // Sin el signo de ? para que no sea opcional
+  nId05PerfilPermiso  Int           @id @default(autoincrement())
+  nId03Permiso        Int
+  nId02Perfil         Int
+  nLeer               Boolean       @default(false)
+  nCrear              Boolean       @default(false)
+  nEditar             Boolean       @default(false)
+  nBorrar             Boolean       @default(false)
+  dFechaCreacion      DateTime      @default(now())
   dFechaActualizacion DateTime?
+  perfil              BP_02_PERFIL  @relation("PerfilPermisos", fields: [nId02Perfil], references: [nId02Perfil])
+  permiso             BP_03_PERMISO @relation("PermisoPerfiles", fields: [nId03Permiso], references: [nId03Permiso])
 
-  permiso             BP_03_PERMISO      @relation("PermisoPerfiles", fields: [nId03Permiso], references: [nId03Permiso])
-  perfil              BP_02_PERFIL       @relation("PerfilPermisos", fields: [nId02Perfil], references: [nId02Perfil])
-}
-
-model BP_06_REGISTRO_CONSULTA {
-  nId06RegistroConsulta Int     @id @default(autoincrement())
-  nId01Usuario         Int      // Usuario que realizó la consulta
-  sFolioReferencia     String   // Folio de la referencia consultada
-  sDetalleConsulta     String?  // Detalles adicionales de la consulta
-  sTipoConsulta        String   // Tipo de consulta (listar, detalle, búsqueda)
-  bExito               Boolean  @default(true) // Si la consulta fue exitosa
-  sError               String?  // Mensaje de error en caso de falla
-  dFechaConsulta       DateTime @default(now())
-  sIpUsuario           String?  // IP del usuario para auditoría
-
-  usuario              BP_01_USUARIO @relation("UsuarioConsultas", fields: [nId01Usuario], references: [nId01Usuario])
+  @@index([nId02Perfil], map: "BP_05_PERFIL_PERMISO_nId02Perfil_fkey")
+  @@index([nId03Permiso], map: "BP_05_PERFIL_PERMISO_nId03Permiso_fkey")
 }
