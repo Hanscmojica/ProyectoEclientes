@@ -14,4 +14,8 @@ router.get("/referencias", apiExternaController.obtenerReferencias);
 router.get("/referencias/buscar", apiExternaController.buscarReferencias);
 router.get("/referencias/:id", apiExternaController.obtenerDetalleReferencia);
 
+// Rutas para auditoría y trazabilidad
+router.post("/referencias/registrar-consulta", apiExternaController.registrarConsulta);
+router.get("/referencias/historial-consultas", apiExternaController.obtenerHistorialConsultas);
+
 module.exports = router;

@@ -1,0 +1,288 @@
+{
+  "timestamp": "2025-05-03T04:04:58.394Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:05:07.847Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:05:13.765Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:05:26.729Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000523",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:151:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:05:36.533Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000524",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:151:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:05:45.589Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:08:51.335Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000524",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:151:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:09:32.355Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:09:52.242Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": "No autenticado",
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:87:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:16:54.233Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:116:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:17:15.256Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-00523",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:180:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:17:29.122Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000523",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:180:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T04:17:36.363Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:116:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T06:45:32.538Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": {
+    "id": 2
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:116:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T07:15:07.746Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000524",
+  "usuario": {
+    "id": 2
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:180:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T07:15:19.308Z",
+  "source": "apiExternaController.buscarReferencias",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/buscar?termino=VER25-000523",
+  "usuario": {
+    "id": 2
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async buscarReferencias (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:180:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T07:15:31.017Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": {
+    "id": 2
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:116:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+
+{
+  "timestamp": "2025-05-03T07:24:35.071Z",
+  "source": "apiExternaController.obtenerDetalleReferencia",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/historial-consultas",
+  "usuario": {
+    "id": 2
+  },
+  "error": {
+    "message": "Request failed with status code 404",
+    "stack": "AxiosError: Request failed with status code 404\n    at settle (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:2031:12)\n    at Unzip.handleStreamEnd (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:3148:11)\n    at Unzip.emit (node:events:536:35)\n    at endReadableNT (node:internal/streams/readable:1698:12)\n    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)\n    at Axios.request (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\node_modules\\axios\\dist\\node\\axios.cjs:4258:41)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async obtenerDetalleReferencia (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:116:23)",
+    "response": {
+      "status": 404,
+      "data": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<!DOCTYPE html PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\" \"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd\">\r\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\r\n  <head>\r\n    <title>Servicio</title>\r\n    <style>BODY { color: #000000; background-color: white; font-family: Verdana; margin-left: 0px; margin-top: 0px; } #content { margin-left: 30px; font-size: .70em; padding-bottom: 2em; } A:link { color: #336699; font-weight: bold; text-decoration: underline; } A:visited { color: #6699cc; font-weight: bold; text-decoration: underline; } A:active { color: #336699; font-weight: bold; text-decoration: underline; } .heading1 { background-color: #003366; border-bottom: #336699 6px solid; color: #ffffff; font-family: Tahoma; font-size: 26px; font-weight: normal;margin: 0em 0em 10px -20px; padding-bottom: 8px; padding-left: 30px;padding-top: 16px;} pre { font-size:small; background-color: #e5e5cc; padding: 5px; font-family: Courier New; margin-top: 0px; border: 1px #f0f0e0 solid; white-space: pre-wrap; white-space: -pre-wrap; word-wrap: break-word; } table { border-collapse: collapse; border-spacing: 0px; font-family: Verdana;} table th { border-right: 2px white solid; border-bottom: 2px white solid; font-weight: bold; background-color: #cecf9c;} table td { border-right: 2px white solid; border-bottom: 2px white solid; background-color: #e5e5cc;}</style>\r\n  </head>\r\n  <body>\r\n    <div id=\"content\">\r\n      <p class=\"heading1\">Servicio</p>\r\n      <p>Extremo no encontrado.</p>\r\n    </div>\r\n  </body>\r\n</html>"
+    }
+  }
+}
+

@@ -17,6 +17,12 @@ const validarJWT = async (req, res = response, next) => {
 
     req.uid = uid;
     req.name = name;
+    
+    // Añadir objeto usuario para compatibilidad con el controlador de API externa
+    req.usuario = {
+      id: uid,
+      nombre: name
+    };
 
     // const usuario = await Usuario.findOne({ _id: uid, is_delete: false });
 

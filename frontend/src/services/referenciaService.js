@@ -36,6 +36,9 @@ export const obtenerReferencias = async () => {
     // Llamamos a nuestro backend que actuará como proxy para la API de SAGA
     const response = await apiClient.get('/referencias');
     
+    // Registramos la consulta para auditoría
+    registrarConsulta('listado_referencias');
+    
     return {
       ok: true,
       referencias: response.data
@@ -58,6 +61,9 @@ export const obtenerDetalleReferencia = async (referenciaId) => {
     // Llamamos a nuestro backend que actuará como proxy para la API de SAGA
     const response = await apiClient.get(`/referencias/${referenciaId}`);
     
+    // Registramos la consulta para auditoría
+    registrarConsulta('detalle_referencia', referenciaId);
+    
     return {
       ok: true,
       detalle: response.data
@@ -70,6 +76,9 @@ export const obtenerDetalleReferencia = async (referenciaId) => {
     const referenciaEncontrada = mockData.referencias.find(ref => ref.id === referenciaId);
     
     if (referenciaEncontrada) {
+      // Registramos la consulta para auditoría (datos mock)
+      registrarConsulta('detalle_referencia_mock', referenciaId);
+      
       return {
         ok: true,
         detalle: referenciaEncontrada
@@ -90,6 +99,9 @@ export const buscarReferencias = async (termino) => {
     // Llamamos a nuestro backend que actuará como proxy para la API de SAGA
     const response = await apiClient.get(`/referencias/buscar?termino=${termino}`);
     
+    // Registramos la consulta para auditoría
+    registrarConsulta('busqueda_referencias', termino);
+    
     return {
       ok: true,
       referencias: response.data
@@ -103,9 +115,54 @@ export const buscarReferencias = async (termino) => {
       ref => ref.id.toLowerCase().includes(termino.toLowerCase())
     );
     
+    // Registramos la consulta para auditoría (datos mock)
+    registrarConsulta('busqueda_referencias_mock', termino);
+    
     return {
       ok: true,
       referencias: referenciasFiltradas
+    };
+  }
+};
+
+/**
+ * Registrar una consulta de referencia para auditoría y trazabilidad
+ * @param {string} tipoConsulta - Tipo de consulta realizada
+ * @param {string} [detalle] - Detalle de la consulta (opcional)
+ * @returns {Promise} - Promesa de la petición
+ */
+export const registrarConsulta = async (tipoConsulta, detalle = '') => {
+  try {
+    await apiClient.post('/referencias/registrar-consulta', {
+      tipoConsulta,
+      detalle,
+      fecha: new Date().toISOString()
+    });
+    console.log(`Consulta registrada: ${tipoConsulta} - ${detalle}`);
+    return true;
+  } catch (error) {
+    console.error('Error al registrar consulta:', error);
+    return false;
+  }
+};
+
+/**
+ * Obtener historial de consultas del usuario
+ * @returns {Promise} - Respuesta de la API
+ */
+export const obtenerHistorialConsultas = async () => {
+  try {
+    const response = await apiClient.get('/referencias/historial-consultas');
+    return {
+      ok: true,
+      consultas: response.data
+    };
+  } catch (error) {
+    console.error('Error al obtener historial de consultas:', error);
+    return {
+      ok: false,
+      message: 'Error al obtener el historial de consultas',
+      consultas: []
     };
   }
 };
@@ -144,7 +201,9 @@ export const obtenerReferenciasMock = () => {
         cantidadMercancia: 10,
         claseBulto: 'Contenedor',
         pesoBruto: '1500 kg',
-        descripcionMercancias: 'Equipos electrónicos'
+        descripcionMercancias: 'Equipos electrónicos',
+        ejecutivo: 'Juan Pérez',
+        cliente: 'Empresa Importadora S.A.'
       },
       {
         id: 'VER25-000523',
@@ -156,7 +215,9 @@ export const obtenerReferenciasMock = () => {
         cantidadMercancia: 8,
         claseBulto: 'Pallet',
         pesoBruto: '800 kg',
-        descripcionMercancias: 'Textiles'
+        descripcionMercancias: 'Textiles',
+        ejecutivo: 'María Rodríguez',
+        cliente: 'Textiles Modernos Inc.'
       }
     ]
   };

@@ -21,11 +21,15 @@ import {
   Search as SearchIcon, 
   Assignment as AssignmentIcon,
   CloudDone as CloudDoneIcon,
-  CloudOff as CloudOffIcon
+  CloudOff as CloudOffIcon,
+  History as HistoryIcon,
+  LibraryBooks as LibraryIcon
 } from '@mui/icons-material';
 import { obtenerReferencias, buscarReferencias } from '../services/referenciaService';
 import { AuthContext } from '../context/AuthContext';
 import DetalleReferencia from '../components/DetalleReferencia';
+import HistorialConsultas from '../components/HistorialConsultas';
+import Biblioteca from '../components/Biblioteca';
 import axios from 'axios';
 
 const Referencias = () => {
@@ -44,6 +48,8 @@ const Referencias = () => {
     estado: 'desconocido', // 'conectado', 'desconectado', 'desconocido'
     mensaje: 'Verificando conexión...'
   });
+  const [mostrarHistorial, setMostrarHistorial] = useState(false);
+  const [mostrarBiblioteca, setMostrarBiblioteca] = useState(false);
 
   // Verificar conexión con SAGA al cargar el componente
   useEffect(() => {
@@ -170,6 +176,26 @@ const Referencias = () => {
     setReferenciaSeleccionada(null);
   };
 
+  // Mostrar historial de consultas
+  const handleVerHistorial = () => {
+    setMostrarHistorial(true);
+  };
+
+  // Cerrar historial de consultas
+  const handleCerrarHistorial = () => {
+    setMostrarHistorial(false);
+  };
+
+  // Mostrar biblioteca de documentos
+  const handleVerBiblioteca = () => {
+    setMostrarBiblioteca(true);
+  };
+
+  // Cerrar biblioteca de documentos
+  const handleCerrarBiblioteca = () => {
+    setMostrarBiblioteca(false);
+  };
+
   return (
     <Container maxWidth="xl">
       {/* Encabezado de bienvenida */}
@@ -208,17 +234,45 @@ const Referencias = () => {
               </Typography>
             </Box>
           </Box>
-          <Chip
-            icon={conexionSaga.estado === 'conectado' ? <CloudDoneIcon /> : <CloudOffIcon />}
-            label={conexionSaga.mensaje}
-            color={conexionSaga.estado === 'conectado' ? 'success' : 'default'}
-            variant="outlined"
-            sx={{ 
-              bgcolor: 'rgba(255, 255, 255, 0.2)', 
-              color: 'white',
-              '& .MuiChip-icon': { color: 'white' } 
-            }}
-          />
+          <Box display="flex" alignItems="center">
+            <Chip
+              icon={conexionSaga.estado === 'conectado' ? <CloudDoneIcon /> : <CloudOffIcon />}
+              label={conexionSaga.mensaje}
+              color={conexionSaga.estado === 'conectado' ? 'success' : 'default'}
+              variant="outlined"
+              sx={{ 
+                bgcolor: 'rgba(255, 255, 255, 0.2)', 
+                color: 'white',
+                '& .MuiChip-icon': { color: 'white' },
+                mr: 2 
+              }}
+            />
+            <Button 
+              variant="outlined" 
+              color="inherit" 
+              onClick={handleVerBiblioteca}
+              startIcon={<LibraryIcon />}
+              sx={{ 
+                borderColor: 'rgba(255, 255, 255, 0.5)', 
+                '&:hover': { borderColor: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' },
+                mr: 2
+              }}
+            >
+              Biblioteca
+            </Button>
+            <Button 
+              variant="outlined" 
+              color="inherit" 
+              onClick={handleVerHistorial}
+              startIcon={<HistoryIcon />}
+              sx={{ 
+                borderColor: 'rgba(255, 255, 255, 0.5)', 
+                '&:hover': { borderColor: 'white', backgroundColor: 'rgba(255, 255, 255, 0.1)' }
+              }}
+            >
+              Historial
+            </Button>
+          </Box>
         </Box>
       </Paper>
 
@@ -352,6 +406,21 @@ const Referencias = () => {
         <DetalleReferencia 
           referencia={referenciaSeleccionada} 
           onCerrar={handleCerrarDetalle}
+        />
+      )}
+
+      {/* Mostrar historial de consultas */}
+      {mostrarHistorial && (
+        <HistorialConsultas 
+          onCerrar={handleCerrarHistorial}
+        />
+      )}
+
+      {/* Mostrar biblioteca de documentos */}
+      {mostrarBiblioteca && (
+        <Biblioteca 
+          onCerrar={handleCerrarBiblioteca}
+          referencias={referencias}
         />
       )}
 

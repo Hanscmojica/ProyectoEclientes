@@ -24,7 +24,9 @@ import {
   ListAlt as ListAltIcon,
   Flag as FlagIcon,
   Print as PrintIcon,
-  Share as ShareIcon
+  Share as ShareIcon,
+  Person as PersonIcon,
+  SupervisorAccount as ExecutiveIcon
 } from '@mui/icons-material';
 
 /**
@@ -82,6 +84,16 @@ const DetalleReferencia = ({ referencia, onCerrar }) => {
       icon: <DescriptionIcon color="primary" />, 
       label: 'Descripción de mercancías', 
       value: referencia.descripcionMercancias 
+    },
+    { 
+      icon: <ExecutiveIcon color="primary" />, 
+      label: 'Ejecutivo', 
+      value: referencia.ejecutivo || 'No asignado' 
+    },
+    { 
+      icon: <PersonIcon color="primary" />, 
+      label: 'Cliente', 
+      value: referencia.cliente || 'No especificado' 
     }
   ];
 
@@ -147,7 +159,29 @@ const DetalleReferencia = ({ referencia, onCerrar }) => {
       <Grid container spacing={4}>
         <Grid item xs={12} md={6}>
           <List>
-            {detalles.slice(0, 5).map((detalle, index) => (
+            {detalles.slice(0, 6).map((detalle, index) => (
+              <React.Fragment key={index}>
+                <ListItem>
+                  <ListItemIcon>
+                    {detalle.icon}
+                  </ListItemIcon>
+                  <ListItemText 
+                    primary={detalle.label} 
+                    secondary={
+                      <Typography variant="body1" fontWeight="medium">
+                        {detalle.value}
+                      </Typography>
+                    }
+                  />
+                </ListItem>
+                {index < 5 && <Divider />}
+              </React.Fragment>
+            ))}
+          </List>
+        </Grid>
+        <Grid item xs={12} md={6}>
+          <List>
+            {detalles.slice(6).map((detalle, index) => (
               <React.Fragment key={index}>
                 <ListItem>
                   <ListItemIcon>
@@ -163,28 +197,6 @@ const DetalleReferencia = ({ referencia, onCerrar }) => {
                   />
                 </ListItem>
                 {index < 4 && <Divider />}
-              </React.Fragment>
-            ))}
-          </List>
-        </Grid>
-        <Grid item xs={12} md={6}>
-          <List>
-            {detalles.slice(5).map((detalle, index) => (
-              <React.Fragment key={index}>
-                <ListItem>
-                  <ListItemIcon>
-                    {detalle.icon}
-                  </ListItemIcon>
-                  <ListItemText 
-                    primary={detalle.label} 
-                    secondary={
-                      <Typography variant="body1" fontWeight="medium">
-                        {detalle.value}
-                      </Typography>
-                    }
-                  />
-                </ListItem>
-                {index < 3 && <Divider />}
               </React.Fragment>
             ))}
           </List>

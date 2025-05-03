@@ -11,6 +11,7 @@ const v1PerfilPermisosRouter = require("./v1/routes/perfilPermisoRoutes");
 const v1ApiExternaRouter = require("./v1/routes/apiExternaRoutes");
 const v1ImagesRouter = require("./v1/routes/imageRoutes");
 const v1PdfsRouter = require("./v1/routes/pdfRoutes");
+const v1BibliotecaRouter = require("./v1/routes/biblioteca");
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -30,6 +31,7 @@ app.use("/api/v1/perfilesPermisos", v1PerfilPermisosRouter);
 app.use("/api/v1/apiExterna", v1ApiExternaRouter);
 app.use("/api/v1/pdfs", v1PdfsRouter);
 app.use("/api/v1/images/usuarios", v1ImagesRouter);
+app.use("/api/v1/biblioteca", v1BibliotecaRouter);
 
 // Verificar si la carpeta build existe
 const frontendPath = path.resolve(__dirname, '../frontend/build');

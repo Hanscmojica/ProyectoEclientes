@@ -91,7 +91,7 @@ const revalidarToken = async (tokenObtenido) => {
 
 const loginUsuario = async (sEmail,sPassword) => {
 
-    const usuario = await prisma.BP_01_USUARIO.findFirst({
+    const usuario = await prisma.bP_01_USUARIO.findFirst({
       where: {
         sEmail: sEmail,
       },
