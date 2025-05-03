@@ -286,3 +286,31 @@
   }
 }
 
+{
+  "timestamp": "2025-05-03T09:18:32.272Z",
+  "source": "apiExternaController.probarConexion",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "No se pudo establecer conexión con SAGA",
+    "stack": "Error: No se pudo establecer conexión con SAGA\n    at probarConexion (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:235:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+    "response": null
+  }
+}
+
+{
+  "timestamp": "2025-05-03T09:18:32.324Z",
+  "source": "apiExternaController.probarConexion",
+  "endpoint": "https://rodall.com:444/SagaWS.NetEnvironmet/rest/sagaWSRef/",
+  "usuario": {
+    "id": 1
+  },
+  "error": {
+    "message": "No se pudo establecer conexión con SAGA",
+    "stack": "Error: No se pudo establecer conexión con SAGA\n    at probarConexion (C:\\Users\\hansc\\Desktop\\ProyectoEclientes\\src\\controllers\\apiExternaController.js:235:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)",
+    "response": null
+  }
+}
+

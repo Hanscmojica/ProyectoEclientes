@@ -27,6 +27,7 @@ model BP_01_USUARIO {
   dFechaActualizacion DateTime?
 
   perfilesUsuario     BP_04_PERFIL_USUARIO[] @relation("UsuarioPerfiles")
+  registrosConsulta   BP_06_REGISTRO_CONSULTA[] @relation("UsuarioConsultas")
 }
 
 
@@ -76,4 +77,18 @@ model BP_05_PERFIL_PERMISO {
 
   permiso             BP_03_PERMISO      @relation("PermisoPerfiles", fields: [nId03Permiso], references: [nId03Permiso])
   perfil              BP_02_PERFIL       @relation("PerfilPermisos", fields: [nId02Perfil], references: [nId02Perfil])
+}
+
+model BP_06_REGISTRO_CONSULTA {
+  nId06RegistroConsulta Int     @id @default(autoincrement())
+  nId01Usuario         Int      // Usuario que realizó la consulta
+  sFolioReferencia     String   // Folio de la referencia consultada
+  sDetalleConsulta     String?  // Detalles adicionales de la consulta
+  sTipoConsulta        String   // Tipo de consulta (listar, detalle, búsqueda)
+  bExito               Boolean  @default(true) // Si la consulta fue exitosa
+  sError               String?  // Mensaje de error en caso de falla
+  dFechaConsulta       DateTime @default(now())
+  sIpUsuario           String?  // IP del usuario para auditoría
+
+  usuario              BP_01_USUARIO @relation("UsuarioConsultas", fields: [nId01Usuario], references: [nId01Usuario])
 }

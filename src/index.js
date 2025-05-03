@@ -12,9 +12,10 @@ const v1ApiExternaRouter = require("./v1/routes/apiExternaRoutes");
 const v1ImagesRouter = require("./v1/routes/imageRoutes");
 const v1PdfsRouter = require("./v1/routes/pdfRoutes");
 const v1BibliotecaRouter = require("./v1/routes/biblioteca");
+const v1FtpRoutes = require('./v1/routes/ftpRoutes');
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 
 // Habilitar CORS para todas las solicitudes
 app.use(cors());
@@ -32,6 +33,7 @@ app.use("/api/v1/apiExterna", v1ApiExternaRouter);
 app.use("/api/v1/pdfs", v1PdfsRouter);
 app.use("/api/v1/images/usuarios", v1ImagesRouter);
 app.use("/api/v1/biblioteca", v1BibliotecaRouter);
+app.use("/api/v1/ftp", v1FtpRoutes);
 
 // Verificar si la carpeta build existe
 const frontendPath = path.resolve(__dirname, '../frontend/build');

@@ -91,7 +91,7 @@ export const descargarArchivo = async (archivoId) => {
     
     if (contentDisposition) {
       const fileNameMatch = contentDisposition.match(/filename="(.+)"/);
-      if (fileNameMatch.length === 2) {
+      if (fileNameMatch && fileNameMatch.length === 2) {
         fileName = fileNameMatch[1];
       }
     }
@@ -129,6 +129,42 @@ export const registrarVisualizacion = async (archivoId) => {
     console.error('Error al registrar visualización:', error);
     return {
       ok: false
+    };
+  }
+};
+
+/**
+ * Subir un archivo
+ * @param {FormData} formData - Datos del formulario con el archivo
+ * @returns {Promise} - Respuesta de la API
+ */
+export const subirArchivo = async (formData) => {
+  try {
+    // Crear una instancia de cliente específica para la subida con Content-Type correcto
+    const uploadClient = axios.create({
+      baseURL: LOCAL_API_URL,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+    
+    // Añadir token al cliente de subida
+    const token = localStorage.getItem('token');
+    if (token) {
+      uploadClient.defaults.headers.common['x-token'] = token;
+    }
+    
+    const response = await uploadClient.post('/subir', formData);
+    
+    return {
+      ok: true,
+      archivo: response.data.archivo
+    };
+  } catch (error) {
+    console.error('Error al subir archivo:', error);
+    return {
+      ok: false,
+      message: error.response?.data?.message || 'Error al subir el archivo'
     };
   }
 };
@@ -221,4 +257,4 @@ export const obtenerCategoriasMock = () => {
       { id: 4, nombre: 'Otros' }
     ]
   };
-}; 
+};

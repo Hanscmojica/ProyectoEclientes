@@ -1,4 +1,5 @@
-const axios = require('axios');
+// src/controllers/apiExternaController.js (actualizado completo)
+const apiExternaService = require('../services/apiExternaService');
 const { registrarErrorAPI } = require('../services/apiErrorService');
 
 // Base URL para la API de SAGA
@@ -54,17 +55,13 @@ const obtenerReferencias = async (req, res) => {
       });
     }
     
-    // Llamar a la API de SAGA 
-    const respuesta = await axios.get(`${SAGA_API_URL}/`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    // Llamar al servicio mejorado
+    const referencias = await apiExternaService.obtenerReferencias(token);
     
     console.log('Respuesta de SAGA recibida');
     
     // Devolver las referencias 
-    res.status(200).json(respuesta.data);
+    res.status(200).json(referencias);
   } catch (error) {
     console.error('Error al obtener referencias de SAGA:', error);
     
@@ -112,17 +109,13 @@ const obtenerDetalleReferencia = async (req, res) => {
       });
     }
     
-    // Llamar a la API de SAGA
-    const respuesta = await axios.get(`${SAGA_API_URL}/${id}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    // Llamar al servicio mejorado
+    const detalle = await apiExternaService.obtenerDetalleReferencia(id, token);
     
     console.log('Detalle de referencia recibido');
     
     // Devolver el detalle de la referencia
-    res.status(200).json(respuesta.data);
+    res.status(200).json(detalle);
   } catch (error) {
     console.error('Error al obtener detalle de referencia de SAGA:', error);
     
@@ -176,17 +169,13 @@ const buscarReferencias = async (req, res) => {
       });
     }
     
-    // Llamar a la API de SAGA
-    const respuesta = await axios.get(`${SAGA_API_URL}/buscar?termino=${termino}`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
+    // Llamar al servicio mejorado
+    const referencias = await apiExternaService.buscarReferencias(termino, token);
     
     console.log('Resultados de búsqueda recibidos');
     
     // Devolver los resultados de la búsqueda
-    res.status(200).json(respuesta.data);
+    res.status(200).json(referencias);
   } catch (error) {
     console.error('Error al buscar referencias en SAGA:', error);
     
@@ -214,6 +203,58 @@ const buscarReferencias = async (req, res) => {
 };
 
 /**
+ * Probar la conexión con SAGA
+ * @param {Object} req - Solicitud HTTP
+ * @param {Object} res - Respuesta HTTP
+ */
+const probarConexion = async (req, res) => {
+  try {
+    console.log('Probando conexión con SAGA...');
+    
+    // Obtener el token del usuario desde la petición
+    const token = req.header('x-token');
+    
+    if (!token) {
+      return res.status(401).json({ 
+        message: 'No hay token en la petición'
+      });
+    }
+    
+    // Probar conexión usando el servicio mejorado
+    const conexionExitosa = await apiExternaService.probarConexion(token);
+    
+    if (conexionExitosa) {
+      console.log('Conexión exitosa con SAGA');
+      
+      // Devolver respuesta de éxito
+      res.status(200).json({
+        message: 'Conexión exitosa con SAGA',
+        status: 'OK'
+      });
+    } else {
+      throw new Error('No se pudo establecer conexión con SAGA');
+    }
+  } catch (error) {
+    console.error('Error al conectar con SAGA:', error);
+    
+    // Registrar el error en el log
+    registrarErrorAPI(
+      'apiExternaController.probarConexion', 
+      `${SAGA_API_URL}/`, 
+      error, 
+      req.usuario
+    );
+    
+    // Devolver mensaje de error detallado
+    res.status(500).json({
+      message: 'Error al conectar con SAGA',
+      error: error.message,
+      details: error.response ? `Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}` : 'Sin detalles adicionales'
+    });
+  }
+};
+
+/**
  * Registrar una consulta para fines de auditoría y trazabilidad
  * @param {Object} req - Solicitud HTTP
  * @param {Object} res - Respuesta HTTP
@@ -232,12 +273,12 @@ const registrarConsulta = async (req, res) => {
     // Registrar la consulta en el historial
     const nuevaConsulta = {
       id: Date.now().toString(),
-      usuario: usuario.id,
-      nombreUsuario: usuario.nombre,
+      usuario: usuario?.id || 'anónimo',
+      nombreUsuario: usuario?.nombre || 'Usuario Anónimo',
       tipoConsulta,
-      detalle,
+      detalle: detalle || '',
       fecha: fecha || new Date().toISOString(),
-      ipCliente: req.ip
+      ipCliente: req.ip || '127.0.0.1'
     };
     
     // En un entorno de producción, esto se guardaría en una base de datos
@@ -305,58 +346,6 @@ const obtenerHistorialConsultas = async (req, res) => {
   }
 };
 
-/**
- * Probar la conexión con SAGA
- * @param {Object} req - Solicitud HTTP
- * @param {Object} res - Respuesta HTTP
- */
-const probarConexion = async (req, res) => {
-  try {
-    console.log('Probando conexión con SAGA...');
-    
-    // Obtener el token del usuario desde la petición
-    const token = req.header('x-token');
-    
-    if (!token) {
-      return res.status(401).json({ 
-        message: 'No hay token en la petición'
-      });
-    }
-    
-    // Intenta hacer una petición simple a la API
-    const respuesta = await axios.get(`${SAGA_API_URL}/`, {
-      headers: {
-        'Authorization': `Bearer ${token}`
-      }
-    });
-    
-    console.log('Conexión exitosa con SAGA');
-    
-    // Devolver respuesta de éxito
-    res.status(200).json({
-      message: 'Conexión exitosa con SAGA',
-      status: 'OK'
-    });
-  } catch (error) {
-    console.error('Error al conectar con SAGA:', error);
-    
-    // Registrar el error en el log
-    registrarErrorAPI(
-      'apiExternaController.probarConexion', 
-      `${SAGA_API_URL}/`, 
-      error, 
-      req.usuario
-    );
-    
-    // Devolver mensaje de error detallado
-    res.status(500).json({
-      message: 'Error al conectar con SAGA',
-      error: error.message,
-      details: error.response ? `Status: ${error.response.status}, Data: ${JSON.stringify(error.response.data)}` : 'Sin detalles adicionales'
-    });
-  }
-};
-
 module.exports = {
   obtenerReferencias,
   obtenerDetalleReferencia,
@@ -365,4 +354,3 @@ module.exports = {
   registrarConsulta,
   obtenerHistorialConsultas
 };
-  

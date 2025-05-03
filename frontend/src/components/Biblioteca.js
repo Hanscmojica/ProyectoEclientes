@@ -7,7 +7,6 @@ import {
   Grid,
   Card,
   CardContent,
-  CardActions,
   Divider,
   List,
   ListItem,
@@ -19,7 +18,16 @@ import {
   Menu,
   MenuItem,
   CircularProgress,
-  Alert
+  Alert,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
+  TextField,
+  FormControl,
+  InputLabel,
+  Select
 } from '@mui/material';
 import { 
   ArrowBack as ArrowBackIcon,
@@ -31,7 +39,8 @@ import {
   Download as DownloadIcon,
   Visibility as ViewIcon,
   Folder as FolderIcon,
-  KeyboardArrowDown as ArrowDownIcon
+  KeyboardArrowDown as ArrowDownIcon,
+  CloudUpload as CloudUploadIcon
 } from '@mui/icons-material';
 import { 
   obtenerArchivosPorReferencia, 
@@ -39,7 +48,8 @@ import {
   descargarArchivo, 
   registrarVisualizacion, 
   obtenerArchivosMock, 
-  obtenerCategoriasMock 
+  obtenerCategoriasMock,
+  subirArchivo
 } from '../services/bibliotecaService';
 
 /**
@@ -57,6 +67,14 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
   const [error, setError] = useState(null);
   const [menuAnchorEl, setMenuAnchorEl] = useState(null);
   const [archivoSeleccionado, setArchivoSeleccionado] = useState(null);
+  
+  // Estados para la funcionalidad de subida de archivos
+  const [archivoParaSubir, setArchivoParaSubir] = useState(null);
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('');
+  const [descripcionArchivo, setDescripcionArchivo] = useState('');
+  const [subiendoArchivo, setSubiendoArchivo] = useState(false);
+  const [dialogoSubirArchivo, setDialogoSubirArchivo] = useState(false);
+  const [notificacion, setNotificacion] = useState({ mensaje: '', abierta: false, tipo: 'info' });
 
   // Lista de referencias disponibles (si no se proporcionan en las props)
   const referenciasDisponibles = referencias.length > 0 
@@ -77,6 +95,20 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
       cargarArchivos(referenciaSeleccionada);
     }
   }, [referenciaSeleccionada]);
+
+  // Mostrar notificación
+  const mostrarNotificacion = (mensaje, tipo = 'info') => {
+    setNotificacion({
+      mensaje,
+      abierta: true,
+      tipo
+    });
+    
+    // Cerrar automáticamente después de 5 segundos
+    setTimeout(() => {
+      setNotificacion(prev => ({ ...prev, abierta: false }));
+    }, 5000);
+  };
 
   // Cargar categorías desde el servicio
   const cargarCategorias = async () => {
@@ -161,6 +193,59 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
     return archivos.filter(archivo => archivo.categoria === categoriaSeleccionada);
   };
 
+  // Función para manejar la selección de archivo para subir
+  const handleSeleccionArchivo = (event) => {
+    setArchivoParaSubir(event.target.files[0]);
+  };
+
+  // Función para subir archivo
+  const handleSubirArchivo = async () => {
+    if (!archivoParaSubir) {
+      mostrarNotificacion('Debe seleccionar un archivo', 'error');
+      return;
+    }
+    
+    if (!referenciaSeleccionada) {
+      mostrarNotificacion('Debe seleccionar una referencia', 'error');
+      return;
+    }
+    
+    setSubiendoArchivo(true);
+    
+    try {
+      const formData = new FormData();
+      formData.append('archivo', archivoParaSubir);
+      formData.append('referencia', referenciaSeleccionada);
+      formData.append('categoria', categoriaSeleccionada || 'Otros');
+      formData.append('descripcion', descripcionArchivo || '');
+      
+      const respuesta = await subirArchivo(formData);
+      
+      if (respuesta.ok) {
+        // Actualizar lista de archivos
+        cargarArchivos(referenciaSeleccionada);
+        
+        // Limpiar formulario
+        setArchivoParaSubir(null);
+        setDescripcionArchivo('');
+        setCategoriaSeleccionada('');
+        
+        // Mostrar notificación
+        mostrarNotificacion('Archivo subido correctamente', 'success');
+        
+        // Cerrar diálogo
+        setDialogoSubirArchivo(false);
+      } else {
+        mostrarNotificacion(respuesta.message || 'Error al subir el archivo', 'error');
+      }
+    } catch (error) {
+      console.error('Error al subir archivo:', error);
+      mostrarNotificacion('Error al conectar con el servidor', 'error');
+    } finally {
+      setSubiendoArchivo(false);
+    }
+  };
+
   // Abrir menú de opciones para un archivo
   const handleMenuClick = (event, archivo) => {
     setMenuAnchorEl(event.currentTarget);
@@ -201,15 +286,15 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
         const respuesta = await descargarArchivo(archivoSeleccionado.id);
         
         if (respuesta.ok) {
-          alert(`Archivo descargado: ${archivoSeleccionado.nombre}`);
+          mostrarNotificacion(`Archivo descargado: ${archivoSeleccionado.nombre}`, 'success');
         } else {
-          alert(`Error al descargar: ${respuesta.message}`);
+          mostrarNotificacion(`Error al descargar: ${respuesta.message}`, 'error');
         }
         
         handleMenuClose();
       } catch (error) {
         console.error('Error al descargar archivo:', error);
-        alert('Error al descargar el archivo');
+        mostrarNotificacion('Error al descargar el archivo', 'error');
         handleMenuClose();
       }
     }
@@ -295,9 +380,22 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
       {/* Mostrar contenido cuando hay una referencia seleccionada */}
       {referenciaSeleccionada && (
         <>
-          <Typography variant="h5" sx={{ mb: 2 }}>
-            Documentos para la referencia: {referenciaSeleccionada}
-          </Typography>
+          <Box display="flex" justifyContent="space-between" alignItems="center" mb={2}>
+            <Typography variant="h5">
+              Documentos para la referencia: {referenciaSeleccionada}
+            </Typography>
+            
+            {/* Botón para subir archivo */}
+            <Button 
+              variant="contained" 
+              color="primary" 
+              onClick={() => setDialogoSubirArchivo(true)}
+              startIcon={<CloudUploadIcon />}
+              disabled={!referenciaSeleccionada}
+            >
+              Subir Archivo
+            </Button>
+          </Box>
           
           {/* Pestañas de categorías */}
           <Tabs 
@@ -375,6 +473,62 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
               <ListItemText>Descargar</ListItemText>
             </MenuItem>
           </Menu>
+          
+          {/* Diálogo para subir archivo */}
+          <Dialog open={dialogoSubirArchivo} onClose={() => !subiendoArchivo && setDialogoSubirArchivo(false)}>
+            <DialogTitle>Subir nuevo archivo</DialogTitle>
+            <DialogContent>
+              <DialogContentText sx={{ mb: 2 }}>
+                Seleccione el archivo que desea subir para la referencia {referenciaSeleccionada}.
+              </DialogContentText>
+              <TextField
+                label="Seleccionar archivo"
+                type="file"
+                fullWidth
+                InputLabelProps={{ shrink: true }}
+                onChange={handleSeleccionArchivo}
+                sx={{ mb: 2 }}
+              />
+              <FormControl fullWidth sx={{ mb: 2 }}>
+                <InputLabel>Categoría</InputLabel>
+                <Select
+                  value={categoriaSeleccionada}
+                  onChange={(e) => setCategoriaSeleccionada(e.target.value)}
+                  label="Categoría"
+                >
+                  {categorias.slice(1).map((categoria) => (
+                    <MenuItem key={categoria.id} value={categoria.nombre}>
+                      {categoria.nombre}
+                    </MenuItem>
+                  ))}
+                </Select>
+              </FormControl>
+              <TextField
+                label="Descripción"
+                fullWidth
+                multiline
+                rows={3}
+                value={descripcionArchivo}
+                onChange={(e) => setDescripcionArchivo(e.target.value)}
+              />
+            </DialogContent>
+            <DialogActions>
+              <Button 
+                onClick={() => setDialogoSubirArchivo(false)} 
+                color="secondary"
+                disabled={subiendoArchivo}
+              >
+                Cancelar
+              </Button>
+              <Button 
+                onClick={handleSubirArchivo} 
+                color="primary"
+                disabled={subiendoArchivo || !archivoParaSubir}
+              >
+                {subiendoArchivo ? <CircularProgress size={24} /> : 'Subir'}
+              </Button>
+            </DialogActions>
+          </Dialog>
         </>
       )}
 
@@ -388,8 +542,25 @@ const Biblioteca = ({ onCerrar, referencias = [] }) => {
           Cerrar Biblioteca
         </Button>
       </Box>
+      
+      {/* Notificación */}
+      {notificacion.abierta && (
+        <Alert 
+          severity={notificacion.tipo} 
+          sx={{ 
+            position: 'fixed', 
+            bottom: 20, 
+            right: 20, 
+            zIndex: 9999,
+            boxShadow: 3
+          }}
+          onClose={() => setNotificacion(prev => ({ ...prev, abierta: false }))}
+        >
+          {notificacion.mensaje}
+        </Alert>
+      )}
     </Paper>
   );
 };
 
-export default Biblioteca; 
+export default Biblioteca;

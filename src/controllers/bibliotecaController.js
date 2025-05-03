@@ -1,7 +1,8 @@
 const path = require('path');
 const fs = require('fs');
+const ftpController = require('./ftpController');
 
-// Directorio para almacenar archivos (en un entorno real, esto podría ser un almacenamiento en la nube o una BD)
+// Directorio para almacenar archivos (mantener para compatibilidad)
 const ARCHIVOS_DIR = path.join(__dirname, '../archivos');
 
 // Asegurar que el directorio existe
@@ -9,8 +10,9 @@ if (!fs.existsSync(ARCHIVOS_DIR)) {
     fs.mkdirSync(ARCHIVOS_DIR, { recursive: true });
 }
 
-// Datos de ejemplo para simular la respuesta de la BD
+// Datos de ejemplo para simular la respuesta de la BD (mantener para compatibilidad)
 const archivosMock = {
+    // Mantener tus datos mock existentes...
     'VER25-000524': [
         {
             id: '1',
@@ -80,7 +82,7 @@ const archivosMock = {
     ]
 };
 
-// Lista de visualizaciones de archivos (en un entorno real, esto estaría en una base de datos)
+// Lista de visualizaciones de archivos (mantener para compatibilidad)
 const visualizaciones = [];
 
 /**
@@ -89,6 +91,13 @@ const visualizaciones = [];
  * @param {Object} res - Respuesta HTTP
  */
 const obtenerArchivosPorReferencia = (req, res) => {
+    // Verificar si el controlador FTP está disponible
+    if (ftpController && ftpController.obtenerArchivosPorReferencia) {
+        // Usar el nuevo sistema FTP
+        return ftpController.obtenerArchivosPorReferencia(req, res);
+    }
+    
+    // Lógica anterior como respaldo
     try {
         const { referenciaId } = req.params;
         
@@ -112,6 +121,13 @@ const obtenerArchivosPorReferencia = (req, res) => {
  * @param {Object} res - Respuesta HTTP
  */
 const obtenerCategorias = (req, res) => {
+    // Verificar si el controlador FTP está disponible
+    if (ftpController && ftpController.obtenerCategorias) {
+        // Usar el nuevo sistema FTP
+        return ftpController.obtenerCategorias(req, res);
+    }
+    
+    // Lógica anterior como respaldo
     try {
         // Categorías predefinidas
         const categorias = [
@@ -136,6 +152,13 @@ const obtenerCategorias = (req, res) => {
  * @param {Object} res - Respuesta HTTP
  */
 const descargarArchivo = (req, res) => {
+    // Verificar si el controlador FTP está disponible
+    if (ftpController && ftpController.descargarArchivo) {
+        // Usar el nuevo sistema FTP
+        return ftpController.descargarArchivo(req, res);
+    }
+    
+    // Lógica anterior como respaldo
     try {
         const { archivoId } = req.params;
         
@@ -182,6 +205,13 @@ const descargarArchivo = (req, res) => {
  * @param {Object} res - Respuesta HTTP
  */
 const registrarVisualizacion = (req, res) => {
+    // Verificar si el controlador FTP está disponible
+    if (ftpController && ftpController.registrarVisualizacion) {
+        // Usar el nuevo sistema FTP
+        return ftpController.registrarVisualizacion(req, res);
+    }
+    
+    // Lógica anterior como respaldo
     try {
         const { archivoId } = req.body;
         
@@ -223,7 +253,25 @@ const registrarVisualizacion = (req, res) => {
 };
 
 /**
- * Función auxiliar para registrar visualizaciones y descargas
+ * Subir un archivo a una referencia
+ * @param {Object} req - Solicitud HTTP
+ * @param {Object} res - Respuesta HTTP
+ */
+const subirArchivo = (req, res) => {
+    // Verificar si el controlador FTP está disponible
+    if (ftpController && ftpController.subirArchivo) {
+        // Usar el nuevo sistema FTP
+        return ftpController.subirArchivo(req, res);
+    }
+    
+    // Si no está disponible el controlador FTP, responder con error
+    res.status(501).json({
+        message: 'Funcionalidad de subida de archivos no implementada'
+    });
+};
+
+/**
+ * Función auxiliar para registrar visualizaciones y descargas (mantener para compatibilidad)
  * @param {Object} usuario - Información del usuario
  * @param {Object} archivo - Información del archivo
  * @param {string} tipo - Tipo de acción (visualizacion o descarga)
@@ -249,5 +297,6 @@ module.exports = {
     obtenerArchivosPorReferencia,
     obtenerCategorias,
     descargarArchivo,
-    registrarVisualizacion
-}; 
+    registrarVisualizacion,
+    subirArchivo // Añadido para soportar la nueva funcionalidad de subida
+};
